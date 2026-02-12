@@ -27,7 +27,7 @@
 
     h1 {
         color: #ff4d6d;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     button {
@@ -51,6 +51,12 @@
         position: absolute;
     }
 
+    img {
+        width: 250px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
     canvas {
         position: fixed;
         top: 0;
@@ -63,7 +69,7 @@
 <body>
 
 <div class="container">
-    <h1>Vaibhav, Will you be my Valentine? ❤️</h1>
+    <h1>Will you be my Valentine? ❤️</h1>
     <button id="yesBtn" onclick="celebrate()">Yes</button>
     <button id="noBtn">No</button>
 </div>
@@ -76,19 +82,19 @@
     noBtn.addEventListener("mouseover", () => {
         const x = Math.random() * (window.innerWidth - 100);
         const y = Math.random() * (window.innerHeight - 50);
-
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
     });
 
     function celebrate() {
-        document.querySelector(".container").innerHTML =
-            "<h1 style='color:#ff4d6d;'>Yayyyyy ❤️ See you on Valentine’s Day Bitchhhh!</h1>";
-
+        document.querySelector(".container").innerHTML = `
+            <h1 style="color:#ff4d6d;">Yessss! I was so nervous 😭❤️</h1>
+            <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Relieved celebration GIF">
+        `;
         startConfetti();
     }
 
-    // 🎉 Confetti Effect
+    // Confetti
     const canvas = document.getElementById("confetti");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
